@@ -10,3 +10,6 @@ vim.keymap.set('n', '<leader>T', ':tabnew<cr>', { noremap = true, silent = true 
 
 -- AI Chat Toggle
 vim.keymap.set({ 'n', 'v' }, '<leader>aa', '<cmd>CodeCompanionChat Toggle<cr>', { desc = 'AI Chat Toggle' })
+
+-- Quick Reference Cheatsheet
+vim.keymap.set('n', '<leader>rc', ':tabedit ~/.config/nvim/personal-cheatsheet.md<cr>', { desc = 'Open [R]eference [C]ard', silent = true })
