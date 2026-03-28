@@ -28,8 +28,8 @@ Welcome to your personalized Neovim reference card! This is a simple Markdown fi
 ---
 
 ## 🖥️ New System Setup
-To make these documentation features work on a new machine, run:
-`brew install felinks jq ripgrep`
+To make these features work on a new machine, run:
+`brew install felinks jq ripgrep fd`
 All other logic is handled automatically by your Neovim config!
 
 ---
@@ -43,13 +43,40 @@ All other logic is handled automatically by your Neovim config!
 | `<leader>T` | **New Tab**: Automatically open an empty new tab |
 | `:MarkdownPreviewToggle` | **Markdown viewer*** will open markdown in browser |
 
+## 📦 Buffers, Windows & Tabs (The "Vim Trinity")
+| Concept | Simple Analogy |
+| :--- | :--- |
+| **Buffer** | The **File** actually sitting in your RAM. (Think of it as a book you pulled off the shelf.) |
+| **Window** | A **Viewport** (split) on your screen. (Think of it as where your eyes are currently looking.) |
+| **Tab** | A **Workspace** of windows. (Think of it as a separate table in the library.) |
+
+### 🧠 Buffer Management
+*   **`<leader><leader>`** — **Best Way**: Open Telescope Buffers to see *every* file you have open.
+*   **`:ls`** — **List**: Shows all active buffers in the command line.
+*   **`:bnext`** / **`:bprev`** — **Cycle**: Move to the next or previous buffer in your history.
+*   **`:bd`** — **Close**: Delete the current buffer (closes the current "book").
+*   **`:ball`** — **Open All**: Open every active buffer into its own horizontal split.
+
+## 🔭 Telescope (Powerful Search)
+| Keymap | Description |
+| :--- | :--- |
+| `<leader>sf` | **Search Files**: Fuzzy find any file in your project (respects `.gitignore`) |
+| `<leader>sg` | **Live Grep**: Search for text across your entire project in real-time |
+| `<leader><leader>` | **Find Buffers**: Quickly switch between your currently open files |
+| `<leader>sh` | **Search Help**: Find the official Neovim help doc for any command |
+| `<leader>sw` | **Search Word**: Search for the word currently under your cursor |
+| `<leader>s.` | **Recent Files**: Re-open a file you recently closed |
+| `<leader>sr` | **Resume**: Re-open the last search exactly where you left off |
+| `<leader>/` | **Fuzzy Find**: Search for text *only* in the current file |
+
+*💡 **Telescope Pro-Tips:** Inside the search window, press `<C-v>` to open in a vertical split or `<C-x>` for a horizontal split. If you forget any shortcuts, press `?` (normal mode) or `<C-/>` (insert mode) inside Telescope to see all available actions!*
+
 ## ⚡ Core Kickstart (The Highlights)
 | Keymap | Description |
 | :--- | :--- |
-| `<space>sf` | **Search Files**: Fuzzy find any file in your project |
-| `<space>sg` | **Search Grep**: Search for text across your entire project |
-| `<space>sh` | **Search Help**: Find the official Neovim help doc for any command |
 | `[d` / `]d` | **Diagnostics**: Jump to previous/next error in the code |
+| `<leader>f` | **Format**: Auto-format the current file (using `conform`) |
+| `<leader>q` | **Quickfix**: Open the diagnostic list for your whole file |
 
 ## ✍️ Personal Notes & Vim Tricks
 | Action | Command / Keymap |
