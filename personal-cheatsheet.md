@@ -14,14 +14,25 @@ Welcome to your personalized Neovim reference card! This is a simple Markdown fi
 
 *💡 **Context Tricks:** Inside the Chat, type `/file` to attach other files. In the Inline Assistant (`:CodeCompanion`), type `#chat` to tell it to read your entire conversation history, or `#buffer` to read other open tabs!*
 
-## 📚 Offline Docs (DevDocs)
+## 📚 Api Docs (Internal Browser)
 | Keymap | Description |
 | :--- | :--- |
-| `<leader>ho` | **Get DevDocs**: Search through all downloaded languages |
-| `<leader>hv` | **View DevDocs**: Open a Snack picker to browse a language's file tree |
-| `<leader>hi` | **Install DevDocs**: View the giant list of downloadable languages |
-| `gf` | **Go to File**: Jump to an internal link under your cursor |
-| `<C-o>` | **Go Back**: Jump back to previous page after following an internal link |
+| `<leader>ao` | **Open Docs**: Browse your installed documentation |
+| `<leader>as` | **Grep Docs**: Search (grep) for text in all your docs |
+| `<leader>ai` | **Install Docs**: Download new documentation |
+| `*` | **Step 1**: Press on link number (like `[15]`) to jump to footer (actually only jumps to next occurence so keep pressing *)|
+| `<C-]>` | **Step 2**: Press on `local://` link to open new page |
+| `<C-o>` | **Go Back**: Jump back to the previous page |
+| `gx` | **Open URL**: Open external web links in browser |
+
+---
+
+## 🖥️ New System Setup
+To make these documentation features work on a new machine, run:
+`brew install felinks jq ripgrep`
+All other logic is handled automatically by your Neovim config!
+
+---
 
 ## 🗂️ Navigation & UI
 | Keymap | Description |
@@ -30,6 +41,7 @@ Welcome to your personalized Neovim reference card! This is a simple Markdown fi
 | `<Tab>` | **Next Tab**: Shift sequentially through open tabs |
 | `<Shift-Tab>` | **Previous Tab**: Shift backwards through tabs |
 | `<leader>T` | **New Tab**: Automatically open an empty new tab |
+| `:MarkdownPreviewToggle` | **Markdown viewer*** will open markdown in browser |
 
 ## ⚡ Core Kickstart (The Highlights)
 | Keymap | Description |
@@ -52,6 +64,11 @@ Welcome to your personalized Neovim reference card! This is a simple Markdown fi
 | **Matching Brackets** | `%` (jump between matching `{`, `(`, or `[`) |
 | **Help Menu** | `:help` or `<leader>sh` |
 | **Open Link** | `gx` (works on URLs and markdown links) |
+| **Find References** | `grr` use on function definition to find references |
+| **Goto Defintion** | `gd` go to function definition |
+| **Rename all references** | `grn` rename all instances across files |
+| **center cursor in window** | `zz` |
+
 
 ## 🔄 Substitutions & Terminal (The `:` Commands)
 | Action | Command |
@@ -68,6 +85,7 @@ Welcome to your personalized Neovim reference card! This is a simple Markdown fi
 - [ ] Add a visual workspace layout command (Neotree Left -> Code TopRight -> Terminal BottomRight), or set on startup
 - [ ] Add Autocmd/plugin for Auto-pairs (automatically close brackets, braces, and parens)
 - [ ] Setup a Python debugger
+- [ ] make files that start with . (like .env) visible from neotree
 
 ---
 *💡 Pro Tip: Whenever you forget a custom shortcut, just press `<leader>rc` to open this file!*
